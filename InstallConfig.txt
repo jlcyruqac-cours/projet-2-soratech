@@ -1,0 +1,31 @@
+Étapes pour Installer FreeSWITCH:
+
+Exécuter le fichier .msi >> Next >> I accept the terms in the Licence Agreement >> Next >> Complete >> Install >> Finish
+
+Ensuite, pour demarrer le serveur:
+
+Rechercher FreeSWITCH >> Exécuter le fichier "application" en tant qu'administrateur
+
+FreeSWITCH est en marche
+
+Étapes pour changer un numéro de client:
+
+Dans l'explorateur windows:
+
+disque local (C:) >> Program File (ou Fichier de programme) >> FreeSWITCH >> conf >> directory >> default
+
+Les fichier .xml sont chacun des clients contenant leur numéro
+
+exemple avec le client "1000", changer chacun des 1000 pour le numéro désiré des lignes suivantes:
+
+<user id="1000"> 
+<variable name="accountcode" value="1000"/> 
+<variable name="effective_caller_id_name" value="Extension 1000"/> 
+<variable name="effective_caller_id_number" value="1000"/> 
+
+Pour changer le mot de passe de la messagerie vocale: changer la valeur de la ligne suivante pour le mot de passe désiré:
+
+<param name="vm-password" value="1000"/> 
+
+Vous pouvez ensuite renommer le fichier XML afin de l'appeler par le nom ou le numéro de la personne à joindre
+
