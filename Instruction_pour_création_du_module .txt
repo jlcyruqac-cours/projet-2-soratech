@@ -1,0 +1,13 @@
+Telecharger le fichier .zip contenant le projet disponible sur le lien https://www.pjsip.org/download.htm
+Dans le dossier pj/include copier-coller config_site_sample dans le même dossier et changer le nom de la copie par config_site.h après avoir supprimé son contenu
+Ouvrir la solution du projet .sln 
+Telecharger pjsip pour Python3 via le lien https://github.com/mgwilliams/python3-pjsip
+Telecharger et installer python 3.6.6 x86 via le lien https://www.python.org/ftp/python/3.6.6/python-3.6.6.exe
+Prendre les fichiers pjsua.c et pjsua.h de l'etape 4 et remplacer ceux du projet python_pjsua
+Remplacer la ligne "PyObject * PyInit__pjsua(void)" par "PyMODINIT_FUNC PyInit__pjsua(void)"
+Dans les propriétés du projet python_pjsua selectionner le mode de compilation release puis aller dans l'onglet "repertoire VC++" il s'agit de mettre les chemins d'accès du python téléchargé plus haut.
+Dans "repertoire include" mettre le path du fichier "include" qui se trouve dans le repertoire du fichier python 3.6.6 téléchargé
+Dans "repertoire bibliothèque" mettre le path du dossier "libs" qui se trouve dans le repertoire du fichier python 3.6.6 téléchargé 
+Cliquer sur le boutton "appliquer" et ensuite sur "ok"
+Compiler le projet en mode release
+Le module _pjsua.pyd sera crée et mis dans le repertoire ...pjsip-apps/libs prêt à être utilisé
